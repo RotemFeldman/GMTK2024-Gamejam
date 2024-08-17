@@ -2,24 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
-    [Header("Components")]
-    [SerializeField] private AudioSource music;
-    [SerializeField] private AudioSource sfx;
-    [SerializeField] private AudioSource weaponSfx;
 
-    [Header("Music Files")]
-    [SerializeField] private AudioClip mainTheme;
-
-    [Header("SFX Files")] 
-    [SerializeField] public AudioClip[] Shoot;
-
-    [SerializeField] public AudioClip[] jump;
+    [SerializeField] private AudioSource _musicSource, _sfxSource;
+    [SerializeField] private AudioClip _menuMusic, _gameMusic;
 
     private void Awake()
     {
@@ -32,37 +23,52 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+
+
     }
 
-
-    public void PlayMusic(AudioClip track )
+    private void OnEnable()
     {
-        music.clip = track;
-        music.Play();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void PlayOneshot(AudioClip sound)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        sfx.clip = sound;
-        sfx.Play();
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        {
+            if(Instance != null)
+                Destroy(gameObject);
+        }
     }
-
-    private int shootArrLocation = 0;
-    public void PlayShootSound()
+   
+    
+    public void PlaySound(AudioClip clip)
     {
-        var sound = Shoot[shootArrLocation];
-        weaponSfx.clip = sound;
-        weaponSfx.Play();
+        if (clip == null)
+        {
+            Debug.Log("Audio Clip Is Null");
+            return;
+        }
 
-        shootArrLocation++;
-        if (shootArrLocation > Shoot.Length)
-            shootArrLocation = 0;
+
+        _sfxSource.PlayOneShot(clip);
     }
 
-    public void PlayRandomFromArray(AudioClip[] audioClips)
+    public void PlaySFX(AudioClip clip, Transform spawn, float volume)
     {
-        int rnd = Random.Range(0, audioClips.Length);
-        sfx.clip = audioClips[rnd];
-        sfx.Play();
+        var source = Instantiate(_sfxSource, spawn.position, Quaternion.identity);
+
+        //source.clip = clip;
+        source.transform.position = spawn.position;
+        source.volume = volume;
+        source.PlayOneShot(clip);
+
+        float length = clip.length;
+        Destroy(source.gameObject, length);
     }
+
+
+   
 }

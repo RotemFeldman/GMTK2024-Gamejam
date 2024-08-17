@@ -7,8 +7,16 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    [Header("Animators")] 
+    [SerializeField] private AnimatorOverrideController Level1Anim;
+    [SerializeField] private AnimatorOverrideController Level2Anim;
+    [SerializeField] private AnimatorOverrideController Level3Anim;
+    
     [Header("sizes")]
     [SerializeField] private Sprite[] playerSprites;
+
+    [Header("Sounds")] 
+    [SerializeField] public AudioClip jumpAudio;
 
     public SpriteRenderer renderer;
     public BoxCollider2D collider;
@@ -30,6 +38,7 @@ public class Player : MonoBehaviour
                 projStrengh = 1;
                 _playerData.GravityMult = 20;
                 _playerData.JumpVelocity = 22;
+                Animator.runtimeAnimatorController = Level1Anim;
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
             case 2:
@@ -39,6 +48,7 @@ public class Player : MonoBehaviour
                 _playerData.GravityMult = 40;
                 _playerData.JumpVelocity = 22;
                 projStrengh = 2;
+                Animator.runtimeAnimatorController = Level2Anim;
                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
                 break;
             case 3:
@@ -48,6 +58,7 @@ public class Player : MonoBehaviour
                 projStrengh = 3;
                 _playerData.GravityMult = 60;
                 _playerData.JumpVelocity = 15;
+                Animator.runtimeAnimatorController = Level3Anim;
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
                     
