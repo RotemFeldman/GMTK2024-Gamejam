@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/x2y2.unity
     guid: 7eb5b7f697dcd9743a66ff3e993a450f
+  - enabled: 1
+    path: Assets/Scenes/x3y2.unity
+    guid: 7ac565554135c0b409307b25ae00ab6b
+  - enabled: 1
+    path: Assets/Scenes/x4y2.unity
+    guid: 18788673d3a84f6489a3845cc3ac02e4
   m_configObjects: {}
