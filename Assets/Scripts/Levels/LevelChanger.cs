@@ -21,6 +21,9 @@ public class LevelChanger : MonoBehaviour
     [ContextMenu("spawn")]
     private void Start()
     {
+        if (LevelConnection.ActiveConnection == null)
+            LevelConnection.ActiveConnection = connection;
+        
         if (connection == LevelConnection.ActiveConnection)
         {
             var p = FindObjectOfType<Player>();

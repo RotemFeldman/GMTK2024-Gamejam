@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public SpriteRenderer renderer;
     public BoxCollider2D collider;
     public int projStrengh;
-    
+
+    private static Player _instance;
 
     public void ChangeSize(int size)
     {
@@ -98,6 +99,10 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
         
         
         StateMachine = new PlayerStateMachine();
