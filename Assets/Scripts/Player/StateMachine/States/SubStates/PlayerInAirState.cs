@@ -49,10 +49,8 @@ public class PlayerInAirState : PlayerState
         _jumpInput = player.InputHandler.JumpInput;
         _jumpInputStop = player.InputHandler.JumpInputStop;
         _input.x = player.InputHandler.NormInputX;
-        _grabInput = player.InputHandler.GrabInput;
 
         CheckJumpMulti();
-
         if (_isGrounded && player.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.IdleState);

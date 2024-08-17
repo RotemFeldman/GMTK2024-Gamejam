@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
     public PlayerRunningState RunningState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
+    
 
     [Header("StateMachine")]
     [SerializeField] public PlayerData _playerData;
@@ -122,7 +123,7 @@ public class Player : MonoBehaviour
         RunningState = new PlayerRunningState(this, StateMachine, _playerData, "running");
         JumpState = new PlayerJumpState(this, StateMachine, _playerData, "inAir");
         InAirState = new PlayerInAirState(this, StateMachine, _playerData, "inAir");
-        
+
     }
 
     private void Start()
@@ -229,6 +230,8 @@ public class Player : MonoBehaviour
         var sc = pr.GetComponent<Projectile>();
             sc.direction = FacingDirection;
             sc.strength = projStrengh;
+            
+            Animator.SetTrigger("shoot");
     }
     
     private void Flip()

@@ -13,7 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY { get; private set; }
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
-    public bool GrabInput { get; private set; }
+    public bool ShootInput { get; private set; }
 
     [SerializeField] private float _inputHoldTime = 0.1f;
 
@@ -53,6 +53,11 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             onShoot?.Invoke();
+            ShootInput = true;
+        }
+        else
+        {
+            ShootInput = false;
         }
     }
 
