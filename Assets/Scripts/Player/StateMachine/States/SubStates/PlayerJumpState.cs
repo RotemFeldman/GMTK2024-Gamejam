@@ -15,6 +15,7 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.EnterState();
 
+        AudioManager.Instance.PlayRandomFromArray(AudioManager.Instance.jump);
         DecreaseAmountOfJumpsLeft();
 
         player.UsedCoyoteTime = true;

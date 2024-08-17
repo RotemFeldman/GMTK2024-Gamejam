@@ -16,19 +16,24 @@ public class LevelChanger : MonoBehaviour
 
     public bool addImpulse;
     public float impulseForce;
-    
+
 
     [ContextMenu("spawn")]
     private void Start()
     {
-        var p = FindObjectOfType<Player>();
-            p.transform.position = spawnPoint.position;
-        if (addImpulse)
+        if (connection == LevelConnection.ActiveConnection)
         {
-            var rb = p.GetComponent<Rigidbody2D>();
-            rb.velocity = new Vector2(0, impulseForce);
+            var p = FindObjectOfType<Player>();
+        
+
+            p.transform.position = spawnPoint.position;
+            if (addImpulse)
+            {
+                var rb = p.GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(0, impulseForce);
+            }
         }
-    }
+}
 
     void OnCollisionEnter2D(Collision2D other)
     {
