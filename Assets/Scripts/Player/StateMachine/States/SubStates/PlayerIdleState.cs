@@ -28,10 +28,14 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
 
-        if(_input.x != 0f && !_isExitingState)
-        {
-            stateMachine.ChangeState(player.RunningState);
+        if (!_isExitingState)
+        { 
+            if (_input.x != 0f)
+            {
+                stateMachine.ChangeState(player.RunningState);
+            }
         }
+
     }
 
     public override void PhysicsUpdate()
