@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public BoxCollider2D collider;
     public int projStrengh;
 
-    private static Player _instance;
+    public static Player Instance;
 
     public void ChangeSize(int size)
     {
@@ -111,9 +111,9 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
-        if (_instance == null)
+        if (Instance == null)
         {
-            _instance = this;
+            Instance = this;
         }
         
         
@@ -180,6 +180,17 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         InputHandler.onShoot.RemoveListener(Shoot);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            GameManager.Instance.playerSize++;
+            
+            
+            ChangeSize(GameManager.Instance.playerSize);
+        }
     }
 
     #endregion

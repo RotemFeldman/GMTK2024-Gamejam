@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Powerup Tile
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -2079230655, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: 1555397100, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: 940601720, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: -156585452, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: -33471265, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: -387914148, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: -780093391, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  - {fileID: -1449417649, guid: 25fdc80b1637bcb4890d992664787a9a, type: 3}
+  m_MinSpeed: 8.2
+  m_MaxSpeed: 8.2
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1
+  m_TileAnimationFlags: 0
