@@ -68,6 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7297396c5549b0bcb1bd71d896ad6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSprites:
+  - {fileID: 21300000, guid: 990212489a4d2524d95f51e3a1d3796e, type: 3}
+  - {fileID: 21300000, guid: 62350bc92916fed4185a26febe320443, type: 3}
+  - {fileID: 21300000, guid: 6ae82c85bbfddbd499d18a4a28dde365, type: 3}
+  renderer: {fileID: 0}
+  collider: {fileID: 0}
+  projStrengh: 0
   _playerData: {fileID: 11400000, guid: f3a44af9a0bc38e439ebb5b13269a3da, type: 2}
   InputHandler: {fileID: 5123223626404177240}
   Projectile: {fileID: 2027573726675672408, guid: f098c8de36b02a940bf67aae03addce1, type: 3}

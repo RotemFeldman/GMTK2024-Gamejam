@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public BoxCollider2D collider;
     public int projStrengh;
 
+    private static Player _instance;
+
     public void ChangeSize(int size)
     {
 
@@ -24,18 +26,27 @@ public class Player : MonoBehaviour
                 renderer.sprite = playerSprites[0];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= changeVec;
+                projStrengh = 1;
+                _playerData.GravityMult = 20;
+                _playerData.JumpVelocity = 22;
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
             case 2:
                 renderer.sprite = playerSprites[1];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= changeVec;
+                _playerData.GravityMult = 40;
+                _playerData.JumpVelocity = 22;
+                projStrengh = 2;
                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
                 break;
             case 3:
                 renderer.sprite = playerSprites[2];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= changeVec;
+                projStrengh = 3;
+                _playerData.GravityMult = 60;
+                _playerData.JumpVelocity = 15;
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
                     
@@ -87,6 +98,17 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        
         StateMachine = new PlayerStateMachine();
 
         IdleState = new PlayerIdleState(this, StateMachine, _playerData, "idle");
@@ -105,6 +127,7 @@ public class Player : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
 
         StateMachine.Initialize(IdleState);
+        ChangeSize(1);
     }
 
     private void Update()
@@ -196,7 +219,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log("shoot");
         var pr = Instantiate(Projectile, ProjSpawn.position, quaternion.identity);
-        pr.GetComponent<Projectile>().direction = FacingDirection;
+        var sc = pr.GetComponent<Projectile>();
+            sc.direction = FacingDirection;
+            sc.strength = projStrengh;
     }
     
     private void Flip()
