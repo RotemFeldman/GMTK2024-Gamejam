@@ -6,18 +6,26 @@ using UnityEngine.Tilemaps;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem pickupAnimation;
+    [SerializeField] private AnimationClip explosion;
+    [SerializeField] private Animator animator;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(this.name + "collision");
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("isPlayer");
-            PlayParticle(transform.position);
+            animator.SetTrigger("Explosion");
+            //PlayParticle(transform.position);
             Destroy(gameObject,1f);
+
             
+
 
         }
     }
@@ -33,10 +41,6 @@ public class Pickup : MonoBehaviour
         }
     }*/
 
-    private void PlayParticle(Vector3 pos)
-    {
-        var p = Instantiate(pickupAnimation, pos, Quaternion.identity);
-        p.Play();
-    }
+    
     
 }
