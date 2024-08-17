@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/test.unity
     guid: a86dcdb67682bac498cc4bc6b062ea15
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/x1y1.unity
     guid: 6b69f005924645d429ac5867a0b30852
   - enabled: 1
@@ -32,4 +32,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/x4y2.unity
     guid: 18788673d3a84f6489a3845cc3ac02e4
+  - enabled: 1
+    path: Assets/Scenes/x4y3.unity
+    guid: e8e11775aafa324429ccf0ef7feea51f
+  - enabled: 1
+    path: Assets/Scenes/x4y4.unity
+    guid: 2f44487c6649c014e8c35f976e11ebd6
+  - enabled: 1
+    path: Assets/Scenes/x5y4.unity
+    guid: d2b6279247b06bb42ba80fb15776a267
+  - enabled: 1
+    path: Assets/Scenes/x5y5.unity
+    guid: 4962763224dae4943a41fdb6b3a4cb5e
+  - enabled: 1
+    path: Assets/Scenes/x4y5.unity
+    guid: 2ac11c4847a892940b92e93e05dfba50
+  - enabled: 1
+    path: Assets/Scenes/x3y4.unity
+    guid: 8bcab16c6da67d1499717238fd914970
   m_configObjects: {}
