@@ -13,11 +13,11 @@ public class Player : MonoBehaviour
     public SpriteRenderer renderer;
     public BoxCollider2D collider;
     public int projStrengh;
-
-    private static Player _instance;
+    
 
     public void ChangeSize(int size)
     {
+        GameManager.Instance.playerSize = size;
 
         var changeVec = new Vector2(0.2f, 0.2f);
         switch (size)
@@ -98,15 +98,6 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         
         
         StateMachine = new PlayerStateMachine();
@@ -127,7 +118,7 @@ public class Player : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
 
         StateMachine.Initialize(IdleState);
-        ChangeSize(1);
+        ChangeSize(GameManager.Instance.playerSize);
     }
 
     private void Update()

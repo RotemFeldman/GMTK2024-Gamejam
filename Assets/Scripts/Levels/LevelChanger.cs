@@ -18,13 +18,15 @@ public class LevelChanger : MonoBehaviour
     public float impulseForce;
     
 
+    [ContextMenu("spawn")]
     private void Start()
     {
         var p = FindObjectOfType<Player>();
             p.transform.position = spawnPoint.position;
         if (addImpulse)
         {
-            p.RB.AddForce(Vector2.up *impulseForce);
+            var rb = p.GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(0, impulseForce);
         }
     }
 
