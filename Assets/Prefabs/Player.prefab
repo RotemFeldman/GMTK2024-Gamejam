@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level1Anim: {fileID: 22100000, guid: 9fd98a29dcd16b945adeed5d243aee99, type: 2}
   Level2Anim: {fileID: 22100000, guid: c4c1e229378389443b834b8622f3c45d, type: 2}
-  Level3Anim: {fileID: 0}
+  Level3Anim: {fileID: 22100000, guid: 3009a7758ddb11649910b5f1115e5090, type: 2}
   playerSprites:
   - {fileID: 21300000, guid: 990212489a4d2524d95f51e3a1d3796e, type: 3}
   - {fileID: 21300000, guid: 62350bc92916fed4185a26febe320443, type: 3}
