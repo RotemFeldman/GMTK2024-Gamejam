@@ -13,11 +13,19 @@ public class LevelChanger : MonoBehaviour
     [SerializeField] private string targetSceneName;
     
     [SerializeField] private Transform spawnPoint;
+
+    public bool addImpulse;
+    public float impulseForce;
     
 
     private void Start()
     {
-        FindObjectOfType<Player>().transform.position = spawnPoint.position;
+        var p = FindObjectOfType<Player>();
+            p.transform.position = spawnPoint.position;
+        if (addImpulse)
+        {
+            p.RB.AddForce(Vector2.up *impulseForce);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
