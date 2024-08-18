@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     public void ChangeSize(int size)
     {
 
-        var changeVec = new Vector2(0.4f, 0.2f);
+        var changeVec = new Vector2(0.6f, 0.2f);
         switch (size)
         {
             case 1:
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
             case 4:
                 renderer.sprite = playerSprites[3];
                 collider.size = renderer.sprite.bounds.size;
-                collider.size -= new Vector2(3,4.5f);
+                collider.size -= new Vector2(3.5f,4.5f);
                 collider.offset = new Vector2(0, -0.25f);
                 projStrengh = 4;  
                 _playerData.GravityMult = 80;
