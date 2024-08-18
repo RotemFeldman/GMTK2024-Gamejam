@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,22 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void End()
+    {
+        StartCoroutine(ToEndScene());
+    }
+    
+    IEnumerator ToEndScene()
+    {
+        Debug.Log("end");
+        yield return new WaitForSeconds(4.5f);
+        Debug.Log("fade");
+        FindObjectOfType<FadeControl>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadSceneAsync("EndScene");
+
     }
 
     // Start is called before the first frame update

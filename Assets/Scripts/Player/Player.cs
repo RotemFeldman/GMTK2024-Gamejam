@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
     public int projStrengh;
 
     public static Player Instance;
-    public static int playerSize = 1;
+    public static int playerSize = 4;
 
     public void PlayRandomWalkSound()
     {
@@ -52,13 +53,11 @@ public class Player : MonoBehaviour
     private void EndSequence()
     {
         Instantiate(level5, transform.position, quaternion.identity);
-        
+        GameManager.Instance.End();
+        Destroy(gameObject);
     }
 
-    IEnumerator ToEndScene()
-    {
-        yield return new WaitForSeconds(2);
-    }
+    
 
     public void ChangeSize(int size)
     {
@@ -120,7 +119,10 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 15;
                 Animator.runtimeAnimatorController = Level4Anim;
                 _currentProjSpawn = projSpawn3;
-                _playerData.GroundCheckRadius = 1; 
+                _playerData.GroundCheckRadius = 1;
+                break;
+            case 5:
+                EndSequence();
                 break;
         }
     }
