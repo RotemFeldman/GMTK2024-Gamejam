@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 22;
                 Animator.runtimeAnimatorController = Level1Anim;
                 _currentProjSpawn = projSpawn1;
-                _playerData.GroundCheckRadius = 0.3f; 
+                _playerData.GroundCheckRadius = 0.2f; 
 
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
