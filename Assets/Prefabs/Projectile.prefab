@@ -51,6 +51,7 @@ MonoBehaviour:
   level1: {fileID: 22100000, guid: cb7b853d529718c49a04c102e59fa9ef, type: 2}
   level2: {fileID: 22100000, guid: 3cc96bb94fcbfc4439b102134e82a9b5, type: 2}
   level3: {fileID: 22100000, guid: 3cc96bb94fcbfc4439b102134e82a9b5, type: 2}
+  level4: {fileID: 22100000, guid: 4c27dcfd3157f734b8a8f94901ae2cd9, type: 2}
   smallImpact: {fileID: 8300000, guid: 0c442d187e1cc724cbeae779b00ed824, type: 3}
   smallImpactVolume: 1
   midImpact: {fileID: 8300000, guid: 44f61ef30c3929f469fa237baecba8b6, type: 3}

@@ -103,6 +103,7 @@ MonoBehaviour:
   Level1Anim: {fileID: 22100000, guid: 9fd98a29dcd16b945adeed5d243aee99, type: 2}
   Level2Anim: {fileID: 22100000, guid: c4c1e229378389443b834b8622f3c45d, type: 2}
   Level3Anim: {fileID: 22100000, guid: 3009a7758ddb11649910b5f1115e5090, type: 2}
+  Level4Anim: {fileID: 22100000, guid: f147ebd4a281e914eb848862ce56871e, type: 2}
   projSpawn1:
   - {fileID: 6189088456214820069}
   projSpawn2:
@@ -114,8 +115,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 990212489a4d2524d95f51e3a1d3796e, type: 3}
   - {fileID: 21300000, guid: 62350bc92916fed4185a26febe320443, type: 3}
   - {fileID: 21300000, guid: 6ae82c85bbfddbd499d18a4a28dde365, type: 3}
+  - {fileID: 1290833594, guid: 9534de1fc808b05409b379e9da2ae945, type: 3}
   jumpAudio: {fileID: 8300000, guid: b24f875744a4f764ab857f6cd17801df, type: 3}
+  jumpVolume: 1
   upgradeSound: {fileID: 8300000, guid: 254282f5690fadf469e3d34a2cd28cdc, type: 3}
+  upgradeVolume: 1
   walkSound:
   - {fileID: 8300000, guid: 4dbc771e052546742b661f4881c38eef, type: 3}
   - {fileID: 8300000, guid: 03cbdd1323b9678469c72de535612a5f, type: 3}
@@ -125,6 +129,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d8c6b26e0657db041872f3497a177310, type: 3}
   - {fileID: 8300000, guid: 04ba06e3afb7b44439883adb15671e25, type: 3}
   - {fileID: 8300000, guid: c8984a7945ecbee44ac3cca9cfdb3b33, type: 3}
+  walkVolume: 1
   renderer: {fileID: 0}
   collider: {fileID: 0}
   projStrengh: 0

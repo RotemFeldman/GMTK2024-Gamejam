@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private AnimatorOverrideController level1;
     [SerializeField] private AnimatorOverrideController level2;
     [SerializeField] private AnimatorOverrideController level3;
-    //[SerializeField] private AnimatorOverrideController level4;
+    [SerializeField] private AnimatorOverrideController level4;
 
     [Header("Sounds")]
     [Header("Impact")] 
@@ -75,6 +75,11 @@ public class Projectile : MonoBehaviour
                 animator.runtimeAnimatorController = level3;
                 strength = 2;
                 _currentClips = bigShoot;
+                break;
+            case 4:
+                animator.runtimeAnimatorController = level4;
+                strength = 3;
+                _currentClips = hugeShoot;
                 break;
             
         }

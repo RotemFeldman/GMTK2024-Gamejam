@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AnimatorOverrideController Level1Anim;
     [SerializeField] private AnimatorOverrideController Level2Anim;
     [SerializeField] private AnimatorOverrideController Level3Anim;
+    [SerializeField] private AnimatorOverrideController Level4Anim;
 
     [Header("projectiles")] 
     public GameObject[] projSpawn1;
@@ -85,7 +86,16 @@ public class Player : MonoBehaviour
                 _currentProjSpawn = projSpawn3;
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
-                    
+            case 4:
+                renderer.sprite = playerSprites[3];
+                collider.size = renderer.sprite.bounds.size;
+                collider.size -= new Vector2(3,4f);
+                projStrengh = 3;  
+                _playerData.GravityMult = 80;
+                _playerData.JumpVelocity = 15;
+                Animator.runtimeAnimatorController = Level4Anim;
+                _currentProjSpawn = projSpawn3;
+                break;
         }
     }
     
@@ -177,23 +187,40 @@ public class Player : MonoBehaviour
         Debug.Log(StateMachine.CurrentState);
 
 
+        HotKey();
+        
+        
+    }
+
+    
+    #if UNITY_EDITOR
+    void HotKey()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ChangeSize(1);
+            playerSize = 1;
+            ChangeSize(playerSize);
         }
         
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            ChangeSize(2);
+            playerSize = 2;
+            ChangeSize(playerSize);
         }
         
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ChangeSize(3);
+            playerSize = 3;
+            ChangeSize(playerSize);
         }
         
-        
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            playerSize = 4;
+            ChangeSize(playerSize);
+        }
     }
+    #endif
 
     private void FixedUpdate()
     {
