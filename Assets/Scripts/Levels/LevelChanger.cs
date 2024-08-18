@@ -16,12 +16,13 @@ public class LevelChanger : MonoBehaviour
 
     public bool addImpulse;
     public float impulseForce;
+    public bool spawn;
 
 
     [ContextMenu("spawn")]
     private void Start()
     {
-        if (LevelConnection.ActiveConnection == null)
+        if (LevelConnection.ActiveConnection == null && spawn)
             LevelConnection.ActiveConnection = connection;
         
         if (connection == LevelConnection.ActiveConnection)
