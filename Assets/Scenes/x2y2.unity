@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: targetSceneName
       value: x3y2
       objectReference: {fileID: 0}
+    - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 4510264308681052571, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_Name
       value: LevelChanger (2)
@@ -617,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.21
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.y

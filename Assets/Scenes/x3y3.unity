@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.59
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.y
@@ -589,10 +589,6 @@ PrefabInstance:
     - target: {fileID: 2343371998719703297, guid: 5e52e365d0f0ba24bbcd8d896ccc336e, type: 3}
       propertyPath: m_Name
       value: Managers
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892365288070548477, guid: 5e52e365d0f0ba24bbcd8d896ccc336e, type: 3}
-      propertyPath: m_Volume
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8131038314529865872, guid: 5e52e365d0f0ba24bbcd8d896ccc336e, type: 3}
       propertyPath: m_Volume

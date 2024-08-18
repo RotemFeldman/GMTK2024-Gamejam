@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: newPlayerData
   m_EditorClassIdentifier: 
   MovementVelocity: 8
-  JumpVelocity: 19
+  JumpVelocity: 15
   AmountOfJumps: 1
   CoyoteTime: 0.1
   JumpHeightMulti: 0.5
   CanMultiJump: 0
-  GravityMult: 60
-  GroundCheckRadius: 0.5
+  GravityMult: 80
+  GroundCheckRadius: 1
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
