@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int playerSize = 1;
 
-    public List<Pickup> pickups;
+    public List<int> PickupsID;
 
     private void Awake()
     {

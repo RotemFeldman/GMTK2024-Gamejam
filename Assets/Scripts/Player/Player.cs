@@ -23,10 +23,10 @@ public class Player : MonoBehaviour
     public int projStrengh;
 
     public static Player Instance;
+    public static int playerSize = 1;
 
     public void ChangeSize(int size)
     {
-        GameManager.Instance.playerSize = size;
 
         var changeVec = new Vector2(0.2f, 0.2f);
         switch (size)
@@ -60,6 +60,47 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 19;
                 Animator.runtimeAnimatorController = Level3Anim;
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
+                break;
+                    
+        }
+    }
+    
+    public void ChangeSizeUp()
+    {
+        playerSize++;
+        
+        var changeVec = new Vector2(0.2f, 0.2f);
+        switch (playerSize)
+        {
+            case 1:
+                renderer.sprite = playerSprites[0];
+                collider.size = renderer.sprite.bounds.size;
+                collider.size -= changeVec;
+                projStrengh = 0;
+                _playerData.GravityMult = 20;
+                _playerData.JumpVelocity = 22;
+                Animator.runtimeAnimatorController = Level1Anim;
+                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
+                break;
+            case 2:
+                renderer.sprite = playerSprites[1];
+                collider.size = renderer.sprite.bounds.size;
+                collider.size -= changeVec;
+                _playerData.GravityMult = 40;
+                _playerData.JumpVelocity = 22;
+                projStrengh = 1;
+                Animator.runtimeAnimatorController = Level2Anim;
+                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
+                break;
+            case 3:
+                renderer.sprite = playerSprites[2];
+                collider.size = renderer.sprite.bounds.size;
+                collider.size -= changeVec;
+                projStrengh = 2;
+                _playerData.GravityMult = 60;
+                _playerData.JumpVelocity = 19;
+                Animator.runtimeAnimatorController = Level3Anim;
+                //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
                     
         }
@@ -135,7 +176,7 @@ public class Player : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
 
         StateMachine.Initialize(IdleState);
-        ChangeSize(GameManager.Instance.playerSize);
+        ChangeSize(playerSize);
     }
 
     private void Update()
@@ -186,10 +227,8 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
-            GameManager.Instance.playerSize++;
             
-            
-            ChangeSize(GameManager.Instance.playerSize);
+            ChangeSizeUp();
         }
     }
 
@@ -240,7 +279,7 @@ public class Player : MonoBehaviour
         var pr = Instantiate(Projectile, ProjSpawn.position, quaternion.identity);
         var sc = pr.GetComponent<Projectile>();
             sc.direction = FacingDirection;
-            sc.strength = projStrengh;
+            sc.ChangeLevel(playerSize);
             
             Animator.SetTrigger("shoot");
     }
