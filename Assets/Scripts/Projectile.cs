@@ -79,7 +79,7 @@ public class Projectile : MonoBehaviour
                 break;
             case 4:
                 animator.runtimeAnimatorController = level4;
-                strength = 3;
+                strength = 4;
                 _currentClips = hugeShoot;
                 _currentImpact = hugelImpact;
                 break;
