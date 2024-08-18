@@ -209,11 +209,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 671549888328061214, guid: a5a1a30b810a9d14ab5a5235953e48c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.74
+      value: -7.950121
       objectReference: {fileID: 0}
     - target: {fileID: 671549888328061214, guid: a5a1a30b810a9d14ab5a5235953e48c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.62
+      value: -3.801354
       objectReference: {fileID: 0}
     - target: {fileID: 671549888328061214, guid: a5a1a30b810a9d14ab5a5235953e48c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -250,10 +250,6 @@ PrefabInstance:
     - target: {fileID: 6039741934209450331, guid: a5a1a30b810a9d14ab5a5235953e48c8, type: 3}
       propertyPath: m_Name
       value: Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 6869867317583531891, guid: a5a1a30b810a9d14ab5a5235953e48c8, type: 3}
-      propertyPath: ID
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
