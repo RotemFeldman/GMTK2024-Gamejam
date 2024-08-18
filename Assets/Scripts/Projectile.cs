@@ -84,8 +84,10 @@ public class Projectile : MonoBehaviour
 
     private void PlayNextInSequence()
     {
-        if (_count >= _currentClips.Length-1)
+        
+        if (_count >= _currentClips.Length)
             _count = 0;
+        Debug.Log(_currentClips[_count]);
         
         AudioManager.Instance.PlaySFX(_currentClips[_count],ShootVolume);
         _count++;
