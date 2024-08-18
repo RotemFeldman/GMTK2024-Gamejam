@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
         if (scene.name == "x1y1")
         {
             _musicSource.clip = endSong;
+            _musicSource.Play();
         }
     }
    
