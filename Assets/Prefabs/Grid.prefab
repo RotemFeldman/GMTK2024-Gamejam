@@ -100,6 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 5440327787333940910}
   strength: 2
+  BreakSound: {fileID: 8300000, guid: 593dd2af57d0c824d942b7ebe3f7eb6a, type: 3}
+  BreakVolume: 1
+  HitSound: {fileID: 8300000, guid: cb01c812f5c31c64eadcaeda1bbaeba0, type: 3}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1839735485 &5440327787333940910
 Tilemap:
@@ -371,6 +375,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 4026549564786122724}
   strength: 4
+  BreakSound: {fileID: 8300000, guid: ecbe8368929edc84bb9adad0aa63a78e, type: 3}
+  BreakVolume: 1
+  HitSound: {fileID: 8300000, guid: 3b76c3afae8e44142a61d831e645ff7f, type: 3}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1839735485 &4026549564786122724
 Tilemap:
@@ -5922,6 +5930,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 4024804826801753079}
   strength: 5
+  BreakSound: {fileID: 8300000, guid: ff79e777c600ae74094971d8d8d064d5, type: 3}
+  BreakVolume: 1
+  HitSound: {fileID: 8300000, guid: de6f613b52825d8439585a1480210e1e, type: 3}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1839735485 &4024804826801753079
 Tilemap:
@@ -10579,6 +10591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 3261585630321291984}
   strength: 1
+  BreakSound: {fileID: 8300000, guid: 4b58d3a8d6fcb8b4d8017b478ddc41c1, type: 3}
+  BreakVolume: 1
+  HitSound: {fileID: 8300000, guid: 1a2bb4fafed698c468a252a9fcdf4beb, type: 3}
+  HitVolume: 1
   IsPlant: 1
 --- !u!1839735485 &3261585630321291984
 Tilemap:
