@@ -10101,6 +10101,10 @@ PrefabInstance:
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimatedSprites.Array.data[2]
       value: 
       objectReference: {fileID: 871301239, guid: eb392c6539b1ee441a32adb65eb1c87f, type: 3}
+    - target: {fileID: 4429602918088440183, guid: 5ac815815bf648e47998532991d64e7e, type: 3}
+      propertyPath: HitVolume
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5440327787333940910, guid: 5ac815815bf648e47998532991d64e7e, type: 3}
       propertyPath: m_Size.x
       value: 17
