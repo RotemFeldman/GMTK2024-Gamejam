@@ -874,7 +874,7 @@ MonoBehaviour:
   BreakSound: {fileID: 8300000, guid: ff79e777c600ae74094971d8d8d064d5, type: 3}
   BreakVolume: 0.1
   HitSound: {fileID: 8300000, guid: de6f613b52825d8439585a1480210e1e, type: 3}
-  HitVolume: 0.2
+  HitVolume: 0.1
   IsPlant: 0
 --- !u!1839735485 &4024804826801753079
 Tilemap:

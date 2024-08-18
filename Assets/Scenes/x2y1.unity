@@ -27444,6 +27444,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[2].Array.data[29].X
       value: 40000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7578559553739363891, guid: 5ac815815bf648e47998532991d64e7e, type: 3}
+      propertyPath: HitVolume
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
