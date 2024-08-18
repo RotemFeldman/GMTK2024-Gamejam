@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource, _sfxSource;
     [SerializeField] private AudioClip _menuMusic, _gameMusic;
+
+    [SerializeField] private AudioClip endSong;
     
 
     private void Awake()
@@ -42,6 +44,11 @@ public class AudioManager : MonoBehaviour
             if(Instance != null)
                 Destroy(gameObject);
         }
+
+        if (scene.name == "x1y1")
+        {
+            _musicSource.clip = endSong;
+        }
     }
    
     
@@ -68,6 +75,8 @@ public class AudioManager : MonoBehaviour
         float length = clip.length;
         Destroy(source.gameObject, length);
     }
+
+    
 
 
    

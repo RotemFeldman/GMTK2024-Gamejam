@@ -80,6 +80,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4e915d46f7f37884ca4dccf19552ba4b, type: 3}
     - target: {fileID: 6148008065415547986, guid: 1c9d2dbdb0c9b6b47a209f8a0eb76886, type: 3}
+      propertyPath: endSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d4db56ce5e8d4142a86cb5afc00e52f, type: 3}
+    - target: {fileID: 6148008065415547986, guid: 1c9d2dbdb0c9b6b47a209f8a0eb76886, type: 3}
       propertyPath: _sfxSource
       value: 
       objectReference: {fileID: 8131038314529865872}
