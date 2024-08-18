@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.3765435, y: -0.27353546, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   level2: {fileID: 22100000, guid: 3cc96bb94fcbfc4439b102134e82a9b5, type: 2}
   level3: {fileID: 22100000, guid: 3cc96bb94fcbfc4439b102134e82a9b5, type: 2}
   strength: 1
-  speed: 5
+  speed: 15
   animator: {fileID: 8426417966968728986}
   direction: 0
   moveVector: {x: 0, y: 0}
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.1902614, g: 0.9308176, b: 0.8724431, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -161,9 +161,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13049364, y: 0}
+  m_Offset: {x: 0.246979, y: 0}
   serializedVersion: 2
-  m_Radius: 0.36950636
+  m_Radius: 0.253021
 --- !u!50 &-4365587731977586502
 Rigidbody2D:
   serializedVersion: 4
