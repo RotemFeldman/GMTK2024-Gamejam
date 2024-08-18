@@ -11,6 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private AnimatorOverrideController Level1Anim;
     [SerializeField] private AnimatorOverrideController Level2Anim;
     [SerializeField] private AnimatorOverrideController Level3Anim;
+
+    [Header("projectiles")] 
+    public GameObject[] projSpawn1;
+    public GameObject[] projSpawn2;
+    public GameObject[] projSpawn3;
+    private GameObject[] _currentProjSpawn;
     
     [Header("sizes")]
     [SerializeField] private Sprite[] playerSprites;
@@ -28,7 +34,7 @@ public class Player : MonoBehaviour
     public void ChangeSize(int size)
     {
 
-        var changeVec = new Vector2(0.2f, 0.2f);
+        var changeVec = new Vector2(0.4f, 0.2f);
         switch (size)
         {
             case 1:
@@ -39,6 +45,7 @@ public class Player : MonoBehaviour
                 _playerData.GravityMult = 20;
                 _playerData.JumpVelocity = 22;
                 Animator.runtimeAnimatorController = Level1Anim;
+                _currentProjSpawn = projSpawn1;
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
             case 2:
@@ -49,6 +56,7 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 22;
                 projStrengh = 1;
                 Animator.runtimeAnimatorController = Level2Anim;
+                _currentProjSpawn = projSpawn2;
                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
                 break;
             case 3:
@@ -59,6 +67,7 @@ public class Player : MonoBehaviour
                 _playerData.GravityMult = 60;
                 _playerData.JumpVelocity = 19;
                 Animator.runtimeAnimatorController = Level3Anim;
+                _currentProjSpawn = projSpawn3;
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
                     
@@ -69,41 +78,7 @@ public class Player : MonoBehaviour
     {
         playerSize++;
         
-        var changeVec = new Vector2(0.2f, 0.2f);
-        switch (playerSize)
-        {
-            case 1:
-                renderer.sprite = playerSprites[0];
-                collider.size = renderer.sprite.bounds.size;
-                collider.size -= changeVec;
-                projStrengh = 0;
-                _playerData.GravityMult = 20;
-                _playerData.JumpVelocity = 22;
-                Animator.runtimeAnimatorController = Level1Anim;
-                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
-                break;
-            case 2:
-                renderer.sprite = playerSprites[1];
-                collider.size = renderer.sprite.bounds.size;
-                collider.size -= changeVec;
-                _playerData.GravityMult = 40;
-                _playerData.JumpVelocity = 22;
-                projStrengh = 1;
-                Animator.runtimeAnimatorController = Level2Anim;
-                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
-                break;
-            case 3:
-                renderer.sprite = playerSprites[2];
-                collider.size = renderer.sprite.bounds.size;
-                collider.size -= changeVec;
-                projStrengh = 2;
-                _playerData.GravityMult = 60;
-                _playerData.JumpVelocity = 19;
-                Animator.runtimeAnimatorController = Level3Anim;
-                //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
-                break;
-                    
-        }
+        ChangeSize(playerSize);
     }
     
     
@@ -276,12 +251,18 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
         Debug.Log("shoot");
-        var pr = Instantiate(Projectile, ProjSpawn.position, quaternion.identity);
-        var sc = pr.GetComponent<Projectile>();
+
+        foreach (var proj in _currentProjSpawn)
+        {
+            var pr = Instantiate(Projectile, proj.transform.position, quaternion.identity);
+            var sc = pr.GetComponent<Projectile>();
             sc.direction = FacingDirection;
             sc.ChangeLevel(playerSize);
+        }
+        
+        
             
-            Animator.SetTrigger("shoot");
+        Animator.SetTrigger("shoot");
     }
     
     private void Flip()
