@@ -16,13 +16,10 @@ public class Projectile : MonoBehaviour
     [Header("Sounds")]
     [Header("Impact")] 
     public AudioClip smallImpact;
-    public float smallImpactVolume =1;
     public AudioClip midImpact;
-    public float midImpactVolume=1;
     public AudioClip biglImpact;
-    public float bigImpactVolume=1;
     public AudioClip hugelImpact;
-    public float hugeImpactVolume=1;
+    public float ImpactVolume=1;
 
     [Header("shoot")] 
     public AudioClip[] smallShoot;
@@ -32,6 +29,7 @@ public class Projectile : MonoBehaviour
     public float ShootVolume = 1;
 
     private AudioClip[] _currentClips;
+    private AudioClip _currentImpact;
     private static int _count = 0 ;
     
     
@@ -65,21 +63,25 @@ public class Projectile : MonoBehaviour
                 animator.runtimeAnimatorController = level1;
                 strength = 0;
                 _currentClips = smallShoot;
+                _currentImpact = smallImpact;
                 break;
             case 2:
                 animator.runtimeAnimatorController = level2;
                 strength = 1;
                 _currentClips = midShoot;
+                _currentImpact = midImpact;
                 break;
             case 3:
                 animator.runtimeAnimatorController = level3;
                 strength = 2;
                 _currentClips = bigShoot;
+                _currentImpact = biglImpact;
                 break;
             case 4:
                 animator.runtimeAnimatorController = level4;
                 strength = 3;
                 _currentClips = hugeShoot;
+                _currentImpact = hugelImpact;
                 break;
             
         }
@@ -102,6 +104,8 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player")||other.gameObject.CompareTag("Projectile"))
             return;
+        
+        AudioManager.Instance.PlaySFX(_currentImpact,ImpactVolume);
         animator.SetTrigger("Impact");
         speed = 0;
         GetComponent<Collider2D>().enabled = false;
