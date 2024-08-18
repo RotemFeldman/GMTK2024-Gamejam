@@ -555,6 +555,10 @@ PrefabInstance:
       propertyPath: targetSceneName
       value: x4y2
       objectReference: {fileID: 0}
+    - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4510264308681052571, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_Name
       value: LevelChanger (3)
