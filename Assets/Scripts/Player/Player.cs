@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
+    public GameObject level5;
+    
     [Header("Animators")] 
     [SerializeField] private AnimatorOverrideController Level1Anim;
     [SerializeField] private AnimatorOverrideController Level2Anim;
@@ -47,6 +49,11 @@ public class Player : MonoBehaviour
         AudioManager.Instance.PlaySFX(walkSound[rnd],walkVolume);
     }
 
+    private void EndSequence()
+    {
+        
+    }
+
     public void ChangeSize(int size)
     {
 
@@ -64,6 +71,8 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 22;
                 Animator.runtimeAnimatorController = Level1Anim;
                 _currentProjSpawn = projSpawn1;
+                _playerData.GroundCheckRadius = 0.3f; 
+
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
             case 2:
@@ -77,6 +86,8 @@ public class Player : MonoBehaviour
                 projStrengh = 1;
                 Animator.runtimeAnimatorController = Level2Anim;
                 _currentProjSpawn = projSpawn2;
+                _playerData.GroundCheckRadius = 0.5f; 
+
                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
                 break;
             case 3:
@@ -89,6 +100,8 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 19;
                 Animator.runtimeAnimatorController = Level3Anim;
                 _currentProjSpawn = projSpawn3;
+                _playerData.GroundCheckRadius = 0.5f; 
+
               //  collider.offset = new Vector2(playerSprites[2].bounds.size.x / 2, 0);
                 break;
             case 4:
@@ -101,6 +114,7 @@ public class Player : MonoBehaviour
                 _playerData.JumpVelocity = 15;
                 Animator.runtimeAnimatorController = Level4Anim;
                 _currentProjSpawn = projSpawn3;
+                _playerData.GroundCheckRadius = 1; 
                 break;
         }
     }
