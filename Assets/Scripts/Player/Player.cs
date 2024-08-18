@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
@@ -25,26 +24,12 @@ public class Player : MonoBehaviour
     [Header("Sounds")] 
     [SerializeField] public AudioClip jumpAudio;
 
-    public float jumpVolume = 1;
-    public AudioClip upgradeSound;
-    public float upgradeVolume =1;
-    public AudioClip[] walkSound;
-    public float walkVolume = 1;
-    
-    [Header("other")]
-
     public SpriteRenderer renderer;
     public BoxCollider2D collider;
     public int projStrengh;
 
     public static Player Instance;
     public static int playerSize = 1;
-
-    public void PlayRandomWalkSound()
-    {
-        int rnd = Random.Range(0, walkSound.Length);
-        AudioManager.Instance.PlaySFX(walkSound[rnd],walkVolume);
-    }
 
     public void ChangeSize(int size)
     {
@@ -217,7 +202,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
-            AudioManager.Instance.PlaySFX(upgradeSound,upgradeVolume);
+            
             ChangeSizeUp();
         }
     }

@@ -16,7 +16,7 @@ public class PlayerJumpState : PlayerAbilityState
         base.EnterState();
 
         if(AudioManager.Instance != null)
-           AudioManager.Instance.PlaySFX(player.jumpAudio,player.jumpVolume);
+           AudioManager.Instance.PlaySFX(player.jumpAudio,player.transform,1f);
         
         DecreaseAmountOfJumpsLeft();
 

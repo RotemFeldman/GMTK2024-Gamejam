@@ -10,10 +10,6 @@ public class TilemapBehaviour : MonoBehaviour
 
     [SerializeField] public Tilemap tilemap;
     [SerializeField] private int strength;
-    [SerializeField] private AudioClip BreakSound;
-    public float BreakVolume =1;
-    [SerializeField] private AudioClip HitSound;
-    public float HitVolume =1;
 
     public bool IsPlant;
     // Start is called before the first frame update
@@ -43,7 +39,6 @@ public class TilemapBehaviour : MonoBehaviour
                     hitPosition.x = hit.point.x - 0.01f * hit.normal.x;
                     hitPosition.y = hit.point.y - 0.01f * hit.normal.y;
                     tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
-                    AudioManager.Instance.PlaySFX(BreakSound,BreakVolume);
 
                     if (IsPlant)
                     {
@@ -54,15 +49,8 @@ public class TilemapBehaviour : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                AudioManager.Instance.PlaySFX(HitSound,HitVolume);
-            }
         }
-        
     }
-    
-    
     
     
 

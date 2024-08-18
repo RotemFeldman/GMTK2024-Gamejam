@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource, _sfxSource;
     [SerializeField] private AudioClip _menuMusic, _gameMusic;
-    
 
     private void Awake()
     {
@@ -57,11 +56,12 @@ public class AudioManager : MonoBehaviour
         _sfxSource.PlayOneShot(clip);
     }
 
-    public void PlaySFX(AudioClip clip, float volume)
+    public void PlaySFX(AudioClip clip, Transform spawn, float volume)
     {
-        var source = Instantiate(_sfxSource, transform.position, Quaternion.identity,transform);
+        var source = Instantiate(_sfxSource, spawn.position, Quaternion.identity);
 
         //source.clip = clip;
+        source.transform.position = spawn.position;
         source.volume = volume;
         source.PlayOneShot(clip);
 

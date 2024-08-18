@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSize: 1
-  PickupsID: 
+  Pickups: []
 --- !u!1001 &2228231270727157104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,12 +64,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5704274615586885261, guid: 1c9d2dbdb0c9b6b47a209f8a0eb76886, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 82246cdf6014218469e7c7d33eed0413, type: 3}
-    - target: {fileID: 5704274615586885261, guid: 1c9d2dbdb0c9b6b47a209f8a0eb76886, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6148008065415547986, guid: 1c9d2dbdb0c9b6b47a209f8a0eb76886, type: 3}
       propertyPath: jump
