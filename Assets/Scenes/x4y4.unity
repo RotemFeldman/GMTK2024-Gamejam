@@ -200,9 +200,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1708029489462176481, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
+      propertyPath: addImpulse
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708029489462176481, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: connection
       value: 
       objectReference: {fileID: 11400000, guid: 197e8031d071b1a42b6e7f4b35a8b4dd, type: 2}
+    - target: {fileID: 1708029489462176481, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
+      propertyPath: impulseForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1708029489462176481, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: targetSceneName
       value: x4y3
@@ -213,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120713545158028265, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: 3.29
       objectReference: {fileID: 0}
     - target: {fileID: 4510264308681052571, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_Name
@@ -225,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7341902993329721471, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.3
+      value: -7.41
       objectReference: {fileID: 0}
     - target: {fileID: 7341902993329721471, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.080223486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7341902993329721471, guid: 16ae8d8c51bf17d4ea56709f39bc6e43, type: 3}
       propertyPath: m_LocalRotation.w
