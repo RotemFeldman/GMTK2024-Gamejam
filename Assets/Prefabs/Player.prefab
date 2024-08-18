@@ -115,7 +115,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 990212489a4d2524d95f51e3a1d3796e, type: 3}
   - {fileID: 21300000, guid: 62350bc92916fed4185a26febe320443, type: 3}
   - {fileID: 21300000, guid: 6ae82c85bbfddbd499d18a4a28dde365, type: 3}
-  - {fileID: 1290833594, guid: 9534de1fc808b05409b379e9da2ae945, type: 3}
+  - {fileID: 21300000, guid: 6ae82c85bbfddbd499d18a4a28dde365, type: 3}
   jumpAudio: {fileID: 8300000, guid: b24f875744a4f764ab857f6cd17801df, type: 3}
   jumpVolume: 0.02
   upgradeSound: {fileID: 8300000, guid: 254282f5690fadf469e3d34a2cd28cdc, type: 3}
