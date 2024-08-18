@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7297396c5549b0bcb1bd71d896ad6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level5: {fileID: 2967388487343938985, guid: d3741aa1ebdd36e42b5b61f9a1ab20fb, type: 3}
   Level1Anim: {fileID: 22100000, guid: 9fd98a29dcd16b945adeed5d243aee99, type: 2}
   Level2Anim: {fileID: 22100000, guid: c4c1e229378389443b834b8622f3c45d, type: 2}
   Level3Anim: {fileID: 22100000, guid: 3009a7758ddb11649910b5f1115e5090, type: 2}

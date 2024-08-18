@@ -51,7 +51,13 @@ public class Player : MonoBehaviour
 
     private void EndSequence()
     {
+        Instantiate(level5, transform.position, quaternion.identity);
         
+    }
+
+    IEnumerator ToEndScene()
+    {
+        yield return new WaitForSeconds(2);
     }
 
     public void ChangeSize(int size)
