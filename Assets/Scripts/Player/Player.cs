@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
                 renderer.sprite = playerSprites[3];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= new Vector2(3,4f);
-                projStrengh = 3;  
+                projStrengh = 4;  
                 _playerData.GravityMult = 80;
                 _playerData.JumpVelocity = 15;
                 Animator.runtimeAnimatorController = Level4Anim;
