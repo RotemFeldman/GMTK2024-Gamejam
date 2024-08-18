@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d8c6b26e0657db041872f3497a177310, type: 3}
   - {fileID: 8300000, guid: 04ba06e3afb7b44439883adb15671e25, type: 3}
   - {fileID: 8300000, guid: c8984a7945ecbee44ac3cca9cfdb3b33, type: 3}
-  walkVolume: 0.05
+  walkVolume: 0.02
   renderer: {fileID: 0}
   collider: {fileID: 0}
   projStrengh: 0
