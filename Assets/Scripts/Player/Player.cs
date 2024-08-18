@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     public int projStrengh;
 
     public static Player Instance;
-    public static int playerSize = 4;
+    public static int playerSize = 1;
 
     public void PlayRandomWalkSound()
     {
