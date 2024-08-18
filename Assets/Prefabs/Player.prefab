@@ -119,7 +119,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: b24f875744a4f764ab857f6cd17801df, type: 3}
   jumpVolume: 0.02
   upgradeSound: {fileID: 8300000, guid: 254282f5690fadf469e3d34a2cd28cdc, type: 3}
-  upgradeVolume: 1
+  upgradeVolume: 0.1
   walkSound:
   - {fileID: 8300000, guid: 4dbc771e052546742b661f4881c38eef, type: 3}
   - {fileID: 8300000, guid: 03cbdd1323b9678469c72de535612a5f, type: 3}
