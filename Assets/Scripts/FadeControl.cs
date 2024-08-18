@@ -23,7 +23,7 @@ public class FadeControl : MonoBehaviour
         {
             if (renderer.color.a > 0)
             {
-                prevValue -= fadeSpeed* Time.deltaTime;
+                prevValue -= fadeSpeed* Time.deltaTime *2f;
                 renderer.color = new Color(0, 0, 0, prevValue);
             }
         }
