@@ -301,7 +301,7 @@ Tilemap:
       - {fileID: -1693588378, guid: eb392c6539b1ee441a32adb65eb1c87f, type: 3}
       - {fileID: -1615089772, guid: eb392c6539b1ee441a32adb65eb1c87f, type: 3}
       - {fileID: 871301239, guid: eb392c6539b1ee441a32adb65eb1c87f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: 2, z: 0}
@@ -388,6 +388,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 2997022}
   strength: 1
+  BreakSound: {fileID: 0}
+  BreakVolume: 1
+  HitSound: {fileID: 0}
+  HitVolume: 1
   IsPlant: 1
 --- !u!66 &2997024
 CompositeCollider2D:
@@ -10348,6 +10352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 611164152}
   strength: 5
+  BreakSound: {fileID: 0}
+  BreakVolume: 1
+  HitSound: {fileID: 0}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1 &1015657870
 GameObject:
@@ -10683,6 +10691,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1015657876}
   strength: 2
+  BreakSound: {fileID: 0}
+  BreakVolume: 1
+  HitSound: {fileID: 0}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1 &1078950008
 GameObject:
@@ -13099,6 +13111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1576913569}
   strength: 4
+  BreakSound: {fileID: 0}
+  BreakVolume: 1
+  HitSound: {fileID: 0}
+  HitVolume: 1
   IsPlant: 0
 --- !u!1 &1935218866
 GameObject:
