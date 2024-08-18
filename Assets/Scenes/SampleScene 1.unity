@@ -10778,7 +10778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7503512836220161241, guid: 4d681baa4b6f7b54eb5ba47b8fb8f4f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5213075
+      value: -7.91
       objectReference: {fileID: 0}
     - target: {fileID: 7503512836220161241, guid: 4d681baa4b6f7b54eb5ba47b8fb8f4f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13242,6 +13242,10 @@ PrefabInstance:
     - target: {fileID: 2343371998719703297, guid: 5e52e365d0f0ba24bbcd8d896ccc336e, type: 3}
       propertyPath: m_Name
       value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724239500960154946, guid: 5e52e365d0f0ba24bbcd8d896ccc336e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
                 renderer.sprite = playerSprites[0];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= changeVec;
+                collider.offset = new Vector2(0, 0);
+
                 projStrengh = 0;
                 _playerData.GravityMult = 20;
                 _playerData.JumpVelocity = 22;
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour
                 renderer.sprite = playerSprites[1];
                 collider.size = renderer.sprite.bounds.size;
                 collider.size -= changeVec;
+                collider.offset = new Vector2(0, 0);
+
                 _playerData.GravityMult = 40;
                 _playerData.JumpVelocity = 22;
                 projStrengh = 1;
@@ -78,6 +82,7 @@ public class Player : MonoBehaviour
             case 3:
                 renderer.sprite = playerSprites[2];
                 collider.size = renderer.sprite.bounds.size;
+                collider.offset = new Vector2(0, 0);
                 collider.size -= changeVec;
                 projStrengh = 2;
                 _playerData.GravityMult = 60;
@@ -89,7 +94,8 @@ public class Player : MonoBehaviour
             case 4:
                 renderer.sprite = playerSprites[3];
                 collider.size = renderer.sprite.bounds.size;
-                collider.size -= new Vector2(3,4f);
+                collider.size -= new Vector2(3,4.5f);
+                collider.offset = new Vector2(0, -0.25f);
                 projStrengh = 4;  
                 _playerData.GravityMult = 80;
                 _playerData.JumpVelocity = 15;
