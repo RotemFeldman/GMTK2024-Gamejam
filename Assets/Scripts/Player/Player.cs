@@ -34,8 +34,9 @@ public class Player : MonoBehaviour
     public float upgradeVolume =1;
     public AudioClip[] walkSound;
     public float walkVolume = 1;
-    
+
     [Header("other")]
+    public AudioSource themeChange;
 
     public SpriteRenderer renderer;
     public BoxCollider2D collider;
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
                 Animator.runtimeAnimatorController = Level2Anim;
                 _currentProjSpawn = projSpawn2;
                 _playerData.GroundCheckRadius = 0.5f; 
+                //AudioManager.Instance.ChangeTheme();
 
                // collider.offset = new Vector2(playerSprites[1].bounds.size.x / 2, 0);
                 break;

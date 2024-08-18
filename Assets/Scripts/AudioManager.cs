@@ -13,7 +13,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _menuMusic, _gameMusic;
 
     [SerializeField] private AudioClip endSong;
-    
+    public AudioClip mainTheme;
+
+    public void ChangeTheme()
+    {
+        _musicSource.clip = mainTheme;
+        _musicSource.Play();
+    }
 
     private void Awake()
     {
