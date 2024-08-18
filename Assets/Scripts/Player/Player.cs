@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
         Debug.Log(StateMachine.CurrentState);
 
 
-        HotKey();
+        //otKey();
         
         
     }
