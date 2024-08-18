@@ -45,7 +45,9 @@ public class LevelChanger : MonoBehaviour
         {
             
             LevelConnection.ActiveConnection = connection;
-            SceneManager.LoadScene(targetSceneName);
+            var fade = FindObjectOfType<FadeControl>();
+            fade.FadeIn();
+            SceneManager.LoadSceneAsync(targetSceneName);
         }
         
     }

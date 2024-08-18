@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene(firstSceneName);
+            SceneManager.LoadSceneAsync(firstSceneName);
         }
     }
 }
