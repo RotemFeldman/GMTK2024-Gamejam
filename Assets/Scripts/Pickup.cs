@@ -12,6 +12,12 @@ public class Pickup : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (GameManager.Instance.pickups.Contains(this))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -19,6 +25,7 @@ public class Pickup : MonoBehaviour
         Debug.Log(this.name + "collision");
         if (other.gameObject.CompareTag("Player"))
         {
+            GameManager.Instance.pickups.Add(this);
             Debug.Log("isPlayer");
             animator.SetTrigger("Explosion");
             //PlayParticle(transform.position);

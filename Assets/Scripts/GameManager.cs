@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public int playerSize = 1;
 
+    public List<Pickup> pickups;
+
     private void Awake()
     {
         if (Instance == null)

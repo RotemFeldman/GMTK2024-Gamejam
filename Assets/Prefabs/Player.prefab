@@ -76,7 +76,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 990212489a4d2524d95f51e3a1d3796e, type: 3}
   - {fileID: 21300000, guid: 62350bc92916fed4185a26febe320443, type: 3}
   - {fileID: 21300000, guid: 6ae82c85bbfddbd499d18a4a28dde365, type: 3}
-  jumpAudio: {fileID: 8300000, guid: 84acc464199cd6b44a36a80ecbb29950, type: 3}
+  jumpAudio: {fileID: 8300000, guid: b24f875744a4f764ab857f6cd17801df, type: 3}
   renderer: {fileID: 0}
   collider: {fileID: 0}
   projStrengh: 0
