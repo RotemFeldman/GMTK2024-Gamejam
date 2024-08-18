@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             case 3:
                 renderer.sprite = playerSprites[2];
                 collider.size = renderer.sprite.bounds.size;
-                collider.offset = new Vector2(0, 0);
+                    collider.offset = new Vector2(0, 0);
                 collider.size -= changeVec;
                 projStrengh = 2;
                 _playerData.GravityMult = 60;
