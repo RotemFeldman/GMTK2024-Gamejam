@@ -48,11 +48,26 @@ public class Projectile : MonoBehaviour
     {
         moveVector = new Vector2(direction, 0);
         animator = GetComponent<Animator>();
+
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+
+        if (Physics2D.OverlapCircle(pos, 0.5f, 6))
+        {
+            Hit();
+        }
     }
     
     void Update()
     {
         transform.Translate(moveVector * (speed * Time.deltaTime));
+    }
+
+    public void SetDirection(int dir)
+    {
+        if (dir < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     public void ChangeLevel(int level)
@@ -100,17 +115,23 @@ public class Projectile : MonoBehaviour
         _count++;
     }
 
+    //private bool _collided;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player")||other.gameObject.CompareTag("Projectile"))
+        if((other.gameObject.CompareTag("Player")||other.gameObject.CompareTag("Projectile")))
             return;
         
+        Hit();
+    }
+
+    void Hit()
+    {
         AudioManager.Instance.PlaySFX(_currentImpact,ImpactVolume);
-        animator.SetTrigger("Impact");
-        speed = 0;
-        GetComponent<Collider2D>().enabled = false;
-        
-        Debug.Log("proj collision");
-        Destroy(gameObject,1);
+                animator.SetTrigger("Impact");
+                speed = 0;
+                GetComponent<Collider2D>().enabled = false;
+                
+                Debug.Log("proj collision");
+                Destroy(gameObject,1);
     }
 }

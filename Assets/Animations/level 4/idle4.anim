@@ -74,9 +74,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.65
-    functionName: 
+    functionName: Empty
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: fe7297396c5549b0bcb1bd71d896ad6b, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

@@ -764,10 +764,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7123481199904285358, guid: 4d681baa4b6f7b54eb5ba47b8fb8f4f4, type: 3}
-      propertyPath: upgradeVolume
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7503512836220161241, guid: 4d681baa4b6f7b54eb5ba47b8fb8f4f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.12

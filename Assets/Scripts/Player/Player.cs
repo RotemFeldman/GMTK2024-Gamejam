@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     public void ChangeSize(int size)
     {
 
-        var changeVec = new Vector2(0.6f, 0.2f);
+        var changeVec = new Vector2(0.35f, 0.2f);
         switch (size)
         {
             case 1:
@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
                 Animator.runtimeAnimatorController = Level1Anim;
                 _currentProjSpawn = projSpawn1;
                 _playerData.GroundCheckRadius = 0.2f; 
+                
 
                // collider.offset = new Vector2(playerSprites[0].bounds.size.x / 2, 0);
                 break;
@@ -218,39 +219,40 @@ public class Player : MonoBehaviour
 
 
         //otKey();
+         #if UNITY_EDITOR
         
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    playerSize = 1;
+                    ChangeSize(playerSize);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    playerSize = 2;
+                    ChangeSize(playerSize);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    playerSize = 3;
+                    ChangeSize(playerSize);
+                }
+                
+                if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    playerSize = 4;
+                    ChangeSize(playerSize);
+                }
+            
+            #endif
         
     }
+    
+    public void Empty(){}
 
     
-    #if UNITY_EDITOR
-    void HotKey()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            playerSize = 1;
-            ChangeSize(playerSize);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            playerSize = 2;
-            ChangeSize(playerSize);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            playerSize = 3;
-            ChangeSize(playerSize);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            playerSize = 4;
-            ChangeSize(playerSize);
-        }
-    }
-    #endif
+   
 
     private void FixedUpdate()
     {
@@ -270,12 +272,16 @@ public class Player : MonoBehaviour
         InputHandler.onShoot.RemoveListener(Shoot);
     }
 
+    private bool themeChanged;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
             AudioManager.Instance.PlaySFX(upgradeSound,upgradeVolume);
             ChangeSizeUp();
+            
+            if(!themeChanged)
+                AudioManager.Instance.ChangeTheme();
         }
     }
 
@@ -328,8 +334,10 @@ public class Player : MonoBehaviour
         {
             var pr = Instantiate(Projectile, proj.transform.position, quaternion.identity);
             var sc = pr.GetComponent<Projectile>();
+            sc.SetDirection(FacingDirection);
             sc.direction = FacingDirection;
             sc.ChangeLevel(playerSize);
+            
         }
         
         

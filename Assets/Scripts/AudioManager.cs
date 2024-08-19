@@ -13,12 +13,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _menuMusic, _gameMusic;
 
     [SerializeField] private AudioClip endSong;
-    public AudioClip mainTheme;
+    public AudioSource mainTheme;
 
     public void ChangeTheme()
     {
-        _musicSource.clip = mainTheme;
-        _musicSource.Play();
+        Debug.Log("theme change");
+        _musicSource.gameObject.SetActive(false); 
+        mainTheme.gameObject.SetActive(true);
     }
 
     private void Awake()
@@ -53,8 +54,8 @@ public class AudioManager : MonoBehaviour
 
         if (scene.name == "x1y1")
         {
-            _musicSource.clip = endSong;
-            _musicSource.Play();
+            mainTheme.clip = endSong;
+            mainTheme.Play();
         }
     }
    

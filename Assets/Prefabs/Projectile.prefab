@@ -170,7 +170,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b1cb310948da871478bbd4a53c224704, type: 3}
   ShootVolume: 0.05
   strength: 1
-  speed: 15
+  speed: 20
   animator: {fileID: 8426417966968728986}
   direction: 0
   moveVector: {x: 0, y: 0}
@@ -262,7 +262,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -279,9 +279,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.246979, y: 0}
+  m_Offset: {x: 0.11117697, y: 0}
   serializedVersion: 2
-  m_Radius: 0.253021
+  m_Radius: 0.37912273
 --- !u!50 &-4365587731977586502
 Rigidbody2D:
   serializedVersion: 4
