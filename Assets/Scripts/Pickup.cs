@@ -32,6 +32,7 @@ public class Pickup : MonoBehaviour
             GameManager.Instance.PickupsID.Add(ID);
             Debug.Log("isPlayer");
             animator.SetTrigger("Explosion");
+            GetComponent<Collider2D>().enabled = false;
             //PlayParticle(transform.position);
 
 
