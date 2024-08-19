@@ -56,7 +56,7 @@ MonoBehaviour:
   midImpact: {fileID: 8300000, guid: 44f61ef30c3929f469fa237baecba8b6, type: 3}
   biglImpact: {fileID: 8300000, guid: d6c2cae484abb68488b0c1e644a22f4a, type: 3}
   hugelImpact: {fileID: 8300000, guid: 0f9aa10f7ed173a4cb9289893dadff06, type: 3}
-  ImpactVolume: 0.1
+  ImpactVolume: 0.05
   smallShoot:
   - {fileID: 8300000, guid: d05efc334e4190940bf55c7b6e0306a9, type: 3}
   - {fileID: 8300000, guid: c4d597aaa465274458fdaea6af861bba, type: 3}
