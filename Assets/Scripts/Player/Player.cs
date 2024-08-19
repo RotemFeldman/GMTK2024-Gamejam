@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public static int playerSize = 1;
 
+
     public void PlayRandomWalkSound()
     {
         int rnd = Random.Range(0, walkSound.Length);
@@ -263,6 +264,7 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         InputHandler.onShoot.AddListener(Shoot);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -270,6 +272,13 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         InputHandler.onShoot.RemoveListener(Shoot);
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        CheckIfShouldFlip(GameManager.Instance.PlayerFacingDirection);
     }
 
     private bool themeChanged;
@@ -349,6 +358,7 @@ public class Player : MonoBehaviour
     {
         FacingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
+        GameManager.Instance.PlayerFacingDirection = FacingDirection;
     }
     #endregion
 }

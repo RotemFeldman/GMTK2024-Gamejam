@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public int playerSize = 1;
 
     public List<int> PickupsID;
-
+    public int PlayerFacingDirection =1;
+    
     private void Awake()
     {
         if (Instance == null)
