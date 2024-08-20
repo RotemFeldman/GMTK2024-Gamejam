@@ -343,7 +343,7 @@ public class Player : MonoBehaviour
         {
             var pr = Instantiate(Projectile, proj.transform.position, quaternion.identity);
             var sc = pr.GetComponent<Projectile>();
-            sc.SetDirection(FacingDirection);
+            //sc.SetDirection(FacingDirection);
             sc.direction = FacingDirection;
             sc.ChangeLevel(playerSize);
             

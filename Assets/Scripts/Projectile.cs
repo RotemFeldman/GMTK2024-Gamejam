@@ -43,18 +43,21 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public int direction;
 
     public Vector2 moveVector;
+    private SpriteRenderer _spriteRenderer;
     
     void Start()
     {
         moveVector = new Vector2(direction, 0);
         animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        SetDirection(direction);
 
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
 
-        if (Physics2D.OverlapCircle(pos, 0.5f, 6))
+        /*if (Physics2D.OverlapCircle(pos, 0.5f, 6))
         {
             Hit();
-        }
+        }*/
     }
     
     void Update()
@@ -66,7 +69,7 @@ public class Projectile : MonoBehaviour
     {
         if (dir < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            _spriteRenderer.flipX = true;
         }
     }
 
@@ -121,10 +124,10 @@ public class Projectile : MonoBehaviour
         if((other.gameObject.CompareTag("Player")||other.gameObject.CompareTag("Projectile")))
             return;
         
-        Hit();
+       // Hit();
     }
 
-    void Hit()
+    public void Hit()
     {
         AudioManager.Instance.PlaySFX(_currentImpact,ImpactVolume);
                 animator.SetTrigger("Impact");
@@ -132,6 +135,8 @@ public class Projectile : MonoBehaviour
                 GetComponent<Collider2D>().enabled = false;
                 
                 Debug.Log("proj collision");
+                var offset = (_spriteRenderer.size.x / 2) * direction;
+                transform.Translate(offset,0,0);
                 Destroy(gameObject,1);
     }
 }

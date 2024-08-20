@@ -58,6 +58,8 @@ public class TilemapBehaviour : MonoBehaviour
             {
                 AudioManager.Instance.PlaySFX(HitSound,HitVolume);
             }
+            
+            pr.Hit();
         }
         
     }
